@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E0ECD3"
+    android:backgroundTint="#ECD9D9"
     tools:context=".MainActivity">
-  </RelativeLayout>
+
+  <Button
+      android:id="@+id/button2"
+
+      android:layout_width="268dp"
+      android:layout_height="59dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="80dp"
+      android:layout_marginBottom="65dp"
+      android:drawableRight="@drawable/ic_send_24"
+      android:text="Acceder" />
+</RelativeLayout>
