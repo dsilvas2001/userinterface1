@@ -1,5 +1,6 @@
 package com.demh.userinterface1
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -12,7 +13,10 @@ class ActivityMostrar : AppCompatActivity() {
     private lateinit var textelefono : TextView
     private lateinit var textcorreo : TextView
     private lateinit var textciudad : TextView
+    private lateinit var textgenero: TextView
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar)
@@ -23,6 +27,7 @@ class ActivityMostrar : AppCompatActivity() {
         textcorreo = findViewById(R.id.textcorreo)
         textelefono = findViewById(R.id.textelefono)
         textciudad = findViewById(R.id.textciudad)
+        textgenero = findViewById(R.id.textgenero)
 
         val nameperson = intent.getStringExtra("NombreCompleto")
         val cedulaperson = intent.getStringExtra("Cedulauser")
@@ -30,12 +35,13 @@ class ActivityMostrar : AppCompatActivity() {
         val correoperson = intent.getStringExtra("Correo")
         val city = intent.getStringExtra("Ciudad")
         val phoneperson = intent.getStringExtra("Telefono")
+        val generoperson = intent.getStringExtra("Genero")
 
         txtname.text = "Mi Nombre es:  " + nameperson
         textcedula.text = "Número  de ID:  " + cedulaperson
         textcorreo.text = "Correo electrónico:  " + correoperson
         textnacimiento.text = "Fecha de Nacimiento:  " + nacimientoperson
         textelefono.text = "Ciudad: " + city
-        textciudad.text = "Telefono: " +phoneperson
+        textciudad.text = "Telefono: " + phoneperson
     }
 }

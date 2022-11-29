@@ -1,10 +1,15 @@
 package com.demh.userinterface1
 
+import android.annotation.SuppressLint
+import android.app.usage.UsageEvents.Event
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var editCedula : EditText
@@ -13,9 +18,13 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var editciudad : EditText
     private  lateinit var editPhoneperson : EditText
     private  lateinit var editEmailperson : EditText
-
+    private  lateinit var capsulagenero : EditText
     private  lateinit var btn_acces : Button
+    private  lateinit var radioGroup : RadioGroup
+    private  lateinit var radioButton : RadioButton
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         editPhoneperson = findViewById(R.id.editPhoneperson)
         editEmailperson = findViewById(R.id.editEmailperson)
         btn_acces = findViewById(R.id.btn_acces)
+        radioGroup = findViewById(R.id.radioGroup)
+
+
+
+
 
         btn_acces.setOnClickListener {
             startActivity(Intent(this,ActivityMostrar::class.java)
@@ -38,6 +52,6 @@ class MainActivity : AppCompatActivity() {
                 .putExtra("Correo",editEmailperson.text.toString())
             )
         }
-
     }
+
 }
